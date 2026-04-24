@@ -4,22 +4,22 @@ public class principal {
 
         Scanner leitor = new Scanner(System.in);
 
-        fila sistema = new fila(4);
+        fila sistema = new fila(3);
 
         int opcao = 0;
 
-        System.out.println("=== sistema de atendimento===");
+        System.out.println("sistema de atendimento");
 
         // loop ate aperta 4
         while (opcao != 4) {
-            System.out.println("\n---------------------------");
-            System.out.println("1 - add cliente");
-            System.out.println("2 - atender/deletar");
-            System.out.println("3 - listar fila");
-            System.out.println("4 - sair");
+            System.out.println("\n ");
+            System.out.println("1  add cliente");
+            System.out.println("2  atender/deletar");
+            System.out.println("3  listar fila");
+            System.out.println("4  sair");
             System.out.print("escola opcao: ");
 
-            // verifica se for numero
+            // filtro numero
             if (leitor.hasNextInt()) {
                 opcao = leitor.nextInt();
                 leitor.nextLine(); // limpa o teclado
@@ -35,19 +35,15 @@ public class principal {
                     String nome = leitor.nextLine();
                     registrar(sistema, nome);
                     break;
-
                 case 2:
                     realizarAtendimento(sistema);
                     break;
-
                 case 3:
                     exibirFila(sistema);
                     break;
-
                 case 4:
                     System.out.println("encerrando");
                     break;
-
                 default:
                     System.out.println("opc invalida");
             }
@@ -65,7 +61,7 @@ public class principal {
         }
     }//fecha registrar
 
-    //atender = delete
+    //mostra proximo
     private static void realizarAtendimento(fila f) {
         String cliente = f.atender();
         if (cliente != null) {
